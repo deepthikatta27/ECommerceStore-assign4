@@ -1,0 +1,15 @@
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  margin: auto;
+  gap: 20px;
+  background-color: #f5f5f5;
+}
+
+#pdtitle{
+    font-size:2vw;
+}
