@@ -139,6 +139,7 @@ function addToCart(product) {
         cart.push({ id: product.id, quantity: 1 });
     }
     localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart!");
     console.log(cart);
 }
 function getProductById(productId) {
