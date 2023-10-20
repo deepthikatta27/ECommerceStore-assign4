@@ -26,24 +26,14 @@ class Rating {
     }
 }
 function fetchData(category) {
-    if (category == "home") {
-        fetch("https://fakestoreapi.com/products")
-            .then((res) => res.json())
-            .then((json) => {
-            const categoryItems = json;
-            console.log(categoryItems);
-            displayProducts(categoryItems);
-        });
-    }
-    else {
-        fetch(`https://fakestoreapi.com/products/category/${category}`)
-            .then((res) => res.json())
-            .then((json) => {
-            const categoryItems = json;
-            console.log(categoryItems);
-            displayProducts(categoryItems);
-        });
-    }
+    const apiUrl = category === 'home' ? 'https://fakestoreapi.com/products' : `https://fakestoreapi.com/products/category/${category}`;
+    fetch(apiUrl)
+        .then((res) => res.json())
+        .then((json) => {
+        const categoryItems = json;
+        console.log(categoryItems);
+        displayProducts(categoryItems);
+    });
 }
 let singleCard;
 function displayProducts(products) {
